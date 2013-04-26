@@ -29,20 +29,6 @@ class MyStateMachine(val init: Any = 0) extends StateMachine[Int, Int] {
   )
 }
 
-class Trends(val init: Any = "findMin") extends StateMachine[Seq[Double], Double] {
-  val states = defineStates(
-    "findMax" -> State( s => {
-      val isMax = (s.head > s.tail.max)
-      (if (isMax) s.head else Double.NaN, if (isMax) "findMin" else "findMax")
-    }),
-
-    "findMin" -> State( s => {
-      val isMin = (s.head < s.tail.min)
-      (if (isMin) s.head else Double.NaN, if (isMin) "findMax" else "findMin")
-    })
-  )
-}
-
 object StateMachineRunner extends App {
 
   val a = Seq(1,2,3,4,5,6,5,4,3,2)
