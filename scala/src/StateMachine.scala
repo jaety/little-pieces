@@ -36,8 +36,4 @@ object StateMachineRunner extends App {
   val smi = sm.iter
   println(a.map(smi(_)))
 
-  val b = Seq(2,1,2,3,5,4,0,1,2,5,4,2).map(_.toDouble)
-  val smi2 = new Trends().iter
-  println(b.sliding(3).map(smi2(_)).toIndexedSeq)
-
 }
