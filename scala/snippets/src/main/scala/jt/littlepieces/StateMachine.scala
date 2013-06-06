@@ -1,3 +1,6 @@
+package jt.littlepieces
+
+import scala.language.implicitConversions
 
 trait StateMachine[T, R] {
   protected case class StateResult(value: R, succ: Any)
