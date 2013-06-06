@@ -20,7 +20,7 @@ object Combine4 {
              next <- op.f(a,b) if (next != 0);
              step = Step(a,b,op,items)) yield find(next +: removeAt(items, inds), target, step +: result)
       })
-      t.flatten.toList.map(_.reverse)
+      t.flatten.toIterable.headOption.map(_.reverse)
     }
   }
 
