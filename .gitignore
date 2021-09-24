@@ -1,6 +1,9 @@
 *.class
 *.log
 
+.metals/
+.vscode/
+
 # sbt specific
 dist/*
 target/
